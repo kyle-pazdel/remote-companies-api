@@ -54,6 +54,10 @@ GEM
     activerecord (7.0.4)
       activemodel (= 7.0.4)
       activesupport (= 7.0.4)
+    activerecord-copy (1.1.0)
+      activerecord (>= 3.1)
+    activerecord-import (1.4.1)
+      activerecord (>= 4.2)
     activestorage (7.0.4)
       actionpack (= 7.0.4)
       activejob (= 7.0.4)
@@ -155,6 +159,8 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  activerecord-copy
+  activerecord-import
   bootsnap
   debug
   jb

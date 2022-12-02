@@ -47,3 +47,5 @@ group :development do
 end
 
 gem 'jb'
+gem 'activerecord-copy'
+gem 'activerecord-import'
