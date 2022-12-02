@@ -10,7 +10,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1
   def show
-    render json: @company
+    render template: "companies/show"
   end
 
   # POST /companies
@@ -18,16 +18,20 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-      render json: @company, status: :created, location: @company
-    else
+      render template: "companies/show"
       render json: @company.errors, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /companies/1
   def update
-    if @company.update(company_params)
-      render json: @company
+    @company.name = params[:name] || @company.name
+    @company.url = params[:url] || @company.url
+    @company.region = params[:region] || @company.region
+    @company.favorite = params[:favorite] || @company.favorite
+    @company.notes = params[:notes] || @company.notes
+    if @company.save
+      render template: "companies/show",
     else
       render json: @company.errors, status: :unprocessable_entity
     end
@@ -36,6 +40,7 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   def destroy
     @company.destroy
+    render json: {message: "Company deleted."}
   end
 
   private
