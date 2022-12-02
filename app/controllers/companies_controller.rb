@@ -19,6 +19,7 @@ class CompaniesController < ApplicationController
 
     if @company.save
       render template: "companies/show"
+    else
       render json: @company.errors, status: :unprocessable_entity
     end
   end
@@ -31,7 +32,7 @@ class CompaniesController < ApplicationController
     @company.favorite = params[:favorite] || @company.favorite
     @company.notes = params[:notes] || @company.notes
     if @company.save
-      render template: "companies/show",
+      render template: "companies/show"
     else
       render json: @company.errors, status: :unprocessable_entity
     end
@@ -40,7 +41,7 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   def destroy
     @company.destroy
-    render json: {message: "Company deleted."}
+    render json: { message: "Company deleted." }
   end
 
   private

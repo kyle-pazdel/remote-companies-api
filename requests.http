@@ -1,5 +1,28 @@
 ### Company Index Request
 GET http://localhost:3000/companies.json
 
-###
-GET http://localhost:3000/companies/1.json
+### Company Show Request
+GET http://localhost:3000/companies/643.json
+
+### Company Create Request
+POST http://localhost:3000/companies.json
+Content-Type: application/json
+
+{
+  "name": "Test Co",
+  "url": "test.com",
+  "region": "test region",
+  "favorite": "false",
+  "notes": "test notes..."
+}
+
+### Company Update Request
+PATCH http://localhost:3000/companies/643.json
+Content-Type: application/json
+
+{
+  "favorite": "true"
+}
+
+### Company Destroy Request
+DELETE http://localhost:3000/companies/643.json
