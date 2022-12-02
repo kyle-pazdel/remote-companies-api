@@ -1,0 +1,11 @@
+@companies.map do |company|
+  {
+    id: company.id,
+    name: company.name,
+    url: company.url,
+    favorite: company.favorite,
+    notes: company.notes,
+    created_at: company.created_at,
+    updated_at: company.updated_at,
+  }
+end

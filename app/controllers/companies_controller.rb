@@ -5,7 +5,7 @@ class CompaniesController < ApplicationController
   def index
     @companies = Company.all
 
-    render json: @companies
+    render template: "companies/index"
   end
 
   # GET /companies/1
@@ -39,13 +39,14 @@ class CompaniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def company_params
-      params.require(:company).permit(:name, :url, :region, :favorite, :notes)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_company
+    @company = Company.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def company_params
+    params.require(:company).permit(:name, :url, :region, :favorite, :notes)
+  end
 end

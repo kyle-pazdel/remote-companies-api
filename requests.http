@@ -1,0 +1,5 @@
+### Company Index Request
+GET http://localhost:3000/companies.json
+
+###
+GET http://localhost:3000/companies/1.json
