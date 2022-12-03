@@ -2,6 +2,7 @@
   id: @company.id,
   name: @company.name,
   url: @company.url,
+  region: @company.region,
   favorite: @company.favorite,
   notes: @company.notes,
   created_at: @company.created_at,
