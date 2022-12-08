@@ -5,6 +5,7 @@
   region: @company.region,
   favorite: @company.favorite,
   notes: @company.notes,
+  date_visited: @company.date_visited,
   created_at: @company.created_at,
   updated_at: @company.updated_at,
 }
