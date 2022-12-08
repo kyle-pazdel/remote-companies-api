@@ -31,6 +31,7 @@ class CompaniesController < ApplicationController
     @company.region = params[:region] || @company.region
     @company.favorite = params[:favorite] || @company.favorite
     @company.notes = params[:notes] || @company.notes
+    @company.date_visited = params[:date_visited] || @company.date_visted
     if @company.save
       render template: "companies/show"
     else
@@ -53,6 +54,6 @@ class CompaniesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def company_params
-    params.require(:company).permit(:name, :url, :region, :favorite, :notes)
+    params.require(:company).permit(:name, :url, :region, :favorite, :notes, :date_visited)
   end
 end
