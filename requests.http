@@ -2,7 +2,7 @@
 GET http://localhost:3000/companies.json
 
 ### Company Show Request
-GET http://localhost:3000/companies/643.json
+GET http://localhost:3000/companies/642.json
 
 ### Company Create Request
 POST http://localhost:3000/companies.json
